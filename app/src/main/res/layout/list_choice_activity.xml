@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="io.github.kobakei.dbsample.ListChoiceActivity">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="io.github.kobakei.dbsample.ListChoiceActivityViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Show positions"
+            android:onClick="@{viewModel::onButtonClick}"/>
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/button"
+            android:choiceMode="multipleChoice"
+            app:checkedItemPositions="@={viewModel.checkedItemPositions}"/>
+
+    </RelativeLayout>
+
+</layout>
