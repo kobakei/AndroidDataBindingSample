@@ -16,15 +16,18 @@ public class MainActivityViewModel {
     }
 
     public void onButton1Click(View view) {
-        Navigator.navigateToTextStrike(context);
+        Navigator.navigateToImagePicasso(context);
     }
 
     public void onButton2Click(View view) {
-        Navigator.navigateToRecyclerScroll(context);
+        Navigator.navigateToTextStrike(context);
     }
 
     public void onButton3Click(View view) {
-        Navigator.navigateToListChoice(context);
+        Navigator.navigateToRecyclerScroll(context);
     }
 
+    public void onButton4Click(View view) {
+        Navigator.navigateToListChoice(context);
+    }
 }

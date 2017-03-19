@@ -9,8 +9,11 @@ import android.text.TextPaint;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by keisukekobayashi on 2017/03/18.
@@ -24,6 +27,20 @@ import android.widget.TextView;
         )
 })
 public class BindingAdapterUtil {
+
+    /**
+     * ImageViewに画像URL
+     * @param imageView
+     * @param imageUrl
+     */
+    @BindingAdapter(value = {"imageUrl"})
+    public static void setImageUrl(ImageView imageView, String imageUrl) {
+        Picasso.with(imageView.getContext())
+                .load(imageUrl)
+                .into(imageView);
+    }
+
+    //-------------------------------
 
     /**
      * TextViewの打ち消し線

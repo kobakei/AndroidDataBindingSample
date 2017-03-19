@@ -10,6 +10,11 @@ import android.support.annotation.NonNull;
 
 public class Navigator {
 
+    public static void navigateToImagePicasso(@NonNull Context from) {
+        Intent intent = new Intent(from, ImagePicassoActivity.class);
+        from.startActivity(intent);
+    }
+
     public static void navigateToTextStrike(@NonNull Context from) {
         Intent intent = new Intent(from, TextStrikeActivity.class);
         from.startActivity(intent);
